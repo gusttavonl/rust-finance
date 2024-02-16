@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package category;
+
+message GetCategoryRequest {
+  string id = 1;
+}
+
+message CategoryModel {
+  string id = 1;
+  string name = 2;
+  string description = 3;
+  string userId = 4;
+  google.protobuf.Timestamp createdAt = 5;
+  google.protobuf.Timestamp updatedAt = 6;
+}
+
+message GetCategoryResponse {
+  CategoryModel category = 1;
+  string message = 2;
+}
+
+service CategoryService {
+  rpc GetCategory (GetCategoryRequest) returns (GetCategoryResponse);
+}
