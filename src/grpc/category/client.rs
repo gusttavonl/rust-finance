@@ -1,6 +1,5 @@
 use category::category_client::CategoryClient;
 use category::GetCategoryRequest;
-use tonic::Request;
 use uuid::Uuid;
 
 pub mod category {

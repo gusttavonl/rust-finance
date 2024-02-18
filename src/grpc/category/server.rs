@@ -1,10 +1,8 @@
 use tonic::{transport::Server, Request, Response, Status};
 use category::category_server::{Category, CategoryServer};
-use category::{CategoryModel, GetCategoryRequest, GetCategoryResponse};
-use chrono::Utc;
+use category::{GetCategoryRequest, GetCategoryResponse};
 use sqlx::PgPool;
 use uuid::Uuid;
-use actix_web::web;
 
 pub mod category {
     tonic::include_proto!("category");
