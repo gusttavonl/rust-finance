@@ -1,8 +1,48 @@
 [package]
-name = "rust-finance"
+name = "backend"
 version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+name = "category-server"
+path = "src/grpc/category/server.rs"
+
+[[bin]]
+name = "category-client"
+path = "src/grpc/category/client.rs"
+
 [dependencies]
+actix-cors = "0.7.0"
+actix-web = "4.3.1"
+argon2 = "0.5.2"
+axum = "0.7.4"
+axum-extra = { version = "0.9.2", features = ["cookie"] }
+base64 = "0.21.4"
+chrono = { version = "0.4.26", features = ["serde"] }
+dotenv = "0.15.0"
+env_logger = "0.11.2"
+jsonwebtoken = "9.2.0"
+rand_core = { version = "0.6.4", features = ["std"] }
+serde = { version = "1.0.180", features = ["derive"] }
+serde_json = "1.0.104"
+sqlx = { version = "0.7.1", features = ["runtime-tokio", "postgres", "chrono", "uuid", "bigdecimal"] }
+time = "0.3.30"
+uuid = { version = "1.4.1", features = ["serde", "v4"] }
+futures = "0.3.29"
+actix-multipart = "0.6.1"
+image = "0.24.5"
+mime = "0.3.16"
+futures-util = "0.3.25"
+tokio = { version = "1.24.1", features = ["fs", "rt-multi-thread"] }
+reqwest = { version = "0.11", features = ["json"] }
+openssl = { version = "0.10.59", features = ["vendored"] }
+lapin = "2.2.1"
+tonic = "0.11.0"
+prost = "0.12.3"
+prost-types = "0.12.3"
+
+[build-dependencies]
+tonic-build = "0.11.0"
+
